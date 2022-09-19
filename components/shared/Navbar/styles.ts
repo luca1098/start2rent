@@ -16,7 +16,7 @@ export const HeaderNav = styled.header`
   width:100%:
   top:0;
   left:0;
-  right:0
+  right:0;
 `
 export const Nav = styled.nav`
   position:relative;
@@ -24,9 +24,6 @@ export const Nav = styled.nav`
   align-items:center;
   justify-content:space-between;
   padding .8rem 0;
-  ${({theme}) => css`
-    width:${theme.layout.width}
-  `};
 `
 
 export const NavLink = styled.li`
@@ -60,14 +57,6 @@ export const NavLinkWrapper = styled.ul<NavLinkWrapperI>`
       background:${theme.background.primary};
     }
   `}
-`
-export const BurgerButton = styled.button`
-  position:absolute;
-  right:0;
-  z-index:10;
-  @media(min-width:${breakpoint.md}){
-    display:none;
-  }
 `
 export const Overlay = styled.div`
   background: #000;

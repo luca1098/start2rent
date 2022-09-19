@@ -29,6 +29,19 @@ export const SecondaryTitle = styled.h2<TextI>`
   font-size: 3rem;
 `
 
+export const ThirdTitle = styled.h2<TextI>`
+  ${({theme, mTop, mBottom, align }) => {
+    const { primary:color } = theme.color.title
+    return getBaseText({
+      color, 
+      mTop, 
+      mBottom, 
+      align
+    })
+  }};
+  font-size: 1.2rem;
+`
+
 export const Subtitle = styled.p`
   font-size:1.5rem;
   ${({theme}) => css`

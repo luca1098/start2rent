@@ -1,12 +1,21 @@
 import React from 'react'
-import { Section } from '../../kit/Layout'
+import Accordion from '../../kit/Accordion'
+import Button from '../../kit/Button'
+import { Flex, Section, Wrapper } from '../../kit/Layout'
 import { Subtitle, Title } from '../../kit/Text'
 
 const Hero:React.FC = () => {
   return (
     <Section>
-      <Title>Firenze <br /> Blockchain</Title>
-      <Subtitle>Meeting fisici, sharing di idee, nozioni, stavoli di studio e analisi progetti.</Subtitle>
+      <Flex align='center'>
+        <Wrapper size='1/2'>
+          <Title>Guadagna di più con gli affitti brevi!
+          </Title>
+        </Wrapper>
+        <Wrapper size='1/2'>
+
+        </Wrapper>
+      </Flex>
     </Section>
 
   )

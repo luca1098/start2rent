@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import React, { useState, useRef, useEffect, useCallback} from 'react'
 import { NavbarI } from '../../../Interfaces/navbar'
+import { Container } from '../../../kit/Layout'
+import Burger from './Burger'
 import NavbarLink from './NavbarLink'
 import { 
   HeaderNav, 
   Nav, 
-  NavLinkWrapper, 
-  BurgerButton, 
+  NavLinkWrapper,  
   Overlay 
 } from './styles'
 
@@ -20,7 +21,7 @@ const Navbar:React.FC<NavbarI> = ({links}) => {
     const el = navLinkWrapperRef?.current
     const elButton = burgerRef?.current
     const containWrapper = !el || el.contains(e.target as Node )
-    const containBtn= !elButton || elButton.contains(e.target as Node )
+    const containBtn = !elButton || elButton.contains(e.target as Node )
     if (containWrapper || containBtn) return
     isBurgerOpen && setIsBurgerOpen(!isBurgerOpen)
   }, [isBurgerOpen])
@@ -34,29 +35,30 @@ const Navbar:React.FC<NavbarI> = ({links}) => {
 
   return (
     <HeaderNav>
-      <Nav>
-      {isBurgerOpen && <Overlay />}
-      <Link href={'/'}>Logo</Link>
-        <NavLinkWrapper 
-          isBurgerOpen={isBurgerOpen} 
-          ref={navLinkWrapperRef}
-        >
-        {links.map( link => 
-          <NavbarLink 
-            key={link.label} 
-            href={link.href} 
-            label={link.label} 
-            onClick={() => setIsBurgerOpen(false)}
-          />
-        )}
-        </NavLinkWrapper>
-        <BurgerButton 
-          onClick={() => setIsBurgerOpen(!isBurgerOpen)}
-          ref={burgerRef}
+      <Container>
+        <Nav>
+        {isBurgerOpen && <Overlay />}
+        <Link href={'/'}>Logo</Link>
+          <NavLinkWrapper 
+            isBurgerOpen={isBurgerOpen} 
+            ref={navLinkWrapperRef}
           >
-            x
-        </BurgerButton>
-      </Nav>
+          {links.map( link => 
+            <NavbarLink 
+              key={link.label} 
+              href={link.href} 
+              label={link.label} 
+              onClick={() => setIsBurgerOpen(false)}
+            />
+          )}
+          </NavLinkWrapper>
+          <Burger 
+            onClick={() => setIsBurgerOpen(!isBurgerOpen)}
+            buttonRef={burgerRef}
+            isActive={isBurgerOpen}
+          />
+        </Nav>
+      </Container>
     </HeaderNav>
   )
 }
