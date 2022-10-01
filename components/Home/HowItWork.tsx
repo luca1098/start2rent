@@ -50,7 +50,7 @@ const HowItWork:FC = () => {
                     <li>Avrai assistenza per la messa a punto dell&apos;immobile</li>
                     <li>Presenteremo noi le pratiche burocratiche</li>
                     <li>Faremo fotografie professionali</li>
-                    <li>Realizzeremo l'annuncio e sarà pubblicato sui portali più importanti</li>
+                    <li>Realizzeremo l&apos;annuncio e sarà pubblicato sui portali più importanti</li>
                   </ul>
                 </div>
               </Flex>
