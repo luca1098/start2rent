@@ -13,10 +13,9 @@ const HowItWork:FC = () => {
             <Flex noWrap>
             <Number>1</Number>
               <div>
-                <ThirdTitle mBottom='1rem'>Valutazione Gratuita dell'immobile</ThirdTitle>
+                <ThirdTitle mBottom='1rem'>Valutazione Gratuita dell&apos;immobile</ThirdTitle>
                 <Paragraph size='sm'>
-                  Descrivici le tue esigenze e le caratteristiche della tua casa, 
-                  ti daremo una stima del guadagno reale.
+                  Descrivici le tue esigenze e le caratteristiche della tua casa, ti daremo una stima del guadagno reale.
                   <br />
                   <b>Gli elementi principali sono sempre due: </b>
                 </Paragraph>
@@ -48,7 +47,7 @@ const HowItWork:FC = () => {
                   Dopo questo punto potrai semplicemente rilassarti e aspettare i primi guadagni.
                 </Paragraph>
                   <ul>
-                    <li>Avrai assistenza per la messa a punto dell’immobile</li>
+                    <li>Avrai assistenza per la messa a punto dell&apos;immobile</li>
                     <li>Presenteremo noi le pratiche burocratiche</li>
                     <li>Faremo fotografie professionali</li>
                     <li>Realizzeremo l'annuncio e sarà pubblicato sui portali più importanti</li>

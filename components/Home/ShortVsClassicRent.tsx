@@ -6,7 +6,7 @@ const ShortVsClassicRent:FC = () => {
   return (
     <Section>
       <Container>
-        <SecondaryTitle align='center'>I vantaggi dell'affitto breve</SecondaryTitle>
+        <SecondaryTitle align='center'>I vantaggi dell&apos;affitto breve</SecondaryTitle>
 
       </Container>
     </Section>
