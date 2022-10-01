@@ -12,13 +12,15 @@ interface FlexI {
   direction?: 'row' | 'column' | 'column-reverse' | 'row-reverse';
   margin?: string;
   noWrap?: boolean;
+  
 }
 
 interface WrapperI {
   size: 'full' | '1/2' | '1/3' | '1/4' | '2/3';
+  fullOnMobile?: boolean
 }
 interface SectionI {
-  background?: 'primary' | 'secondary'
+  background?: 'primary' | 'secondary' | 'base'
 }
 export const Container = styled.div<ContainerI>`
   margin:0 auto;
@@ -52,13 +54,13 @@ export const Flex = styled.div<FlexI>`
 `;
 
 export const Wrapper = styled.div<WrapperI>`
-  ${({size}) => css`
-    width: ${getSize(size, breakpoint.lg)};
+  ${({size, fullOnMobile}) => css`
+    width: ${getSize(size, breakpoint.lg, fullOnMobile)};
     @media(max-width: ${breakpoint.md}){
-      width: ${getSize(size, breakpoint.md)};
+      width: ${getSize(size, breakpoint.md, fullOnMobile)};
     };
     @media(max-width: ${breakpoint.sm}){
-      width: ${getSize(size, breakpoint.sm)};
+      width: ${getSize(size, breakpoint.sm, fullOnMobile)};
     };
   `};
 `;

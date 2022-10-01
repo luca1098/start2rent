@@ -17,6 +17,7 @@ const PRIMARY_TEXT = '#4C4C4C'
 const SECONDARY_TEXT = '#f1f1f1'
 const SECONDARY_TITLE = '#fff'
 const BACKGROUND = '#EFEFEF'
+const BACKGROUND_BASE = '#FDFDFD'
 const BACKGROUND_SECONDARY = '#336647'
 const BORDER_COLOR = '#1D1F2F'
 
@@ -42,6 +43,7 @@ const baseTheme:DefaultTheme = {
   },
   background: {
     primary:BACKGROUND,
+    base:BACKGROUND_BASE,
     secondary:BACKGROUND_SECONDARY,
   },
   color: {

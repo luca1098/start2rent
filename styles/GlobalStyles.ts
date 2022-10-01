@@ -4,17 +4,17 @@ const GlobalStyle = createGlobalStyle`
   *{
     box-sizing: border-box;
   }
-  html, body {
+  html, body, textarea {
     padding:0;
     margin:0;
     font-family: sans-serif
   }
   ul{
-    padding:0;
+    padding:0 0 0 1rem;
     margin:0;
   }
   li{
-    list-style:none;
+
   }
   .ham {
     cursor: pointer;

@@ -1,5 +1,4 @@
 import Image, { StaticImageData } from 'next/image';
-import Link from 'next/link';
 import React, { FC } from 'react'
 import { IconType } from 'react-icons';
 import Box from '../../../kit/Box'
@@ -12,6 +11,7 @@ interface SocialI {
   link: string
   icon: IconType
   qrCode: StaticImageData
+  color:string
 }
 
 interface SocialBoxI {
@@ -22,10 +22,10 @@ const SocialBox:FC<SocialBoxI> = ({socials}) => {
   return (
     <Flex justify='between'>
       {socials.map( social => {
-        const {icon, name, qrCode, link} = social
+        const {icon, name, qrCode, link, color} = social
         const Icon = icon
         return (
-          <Box size='1/2' key={name}>
+          <Box size='1/2' key={name} color={color}>
             <Flex direction='column' align='center' justify='center'>
             <ThirdTitle mBottom='10px'><Icon /> {name}</ThirdTitle>
             <Image src={qrCode} alt={`${name} qrCode`} width={100} height={100}/>

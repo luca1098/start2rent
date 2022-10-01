@@ -1,13 +1,17 @@
 import styled, { css } from "styled-components";
 import { Wrapper } from "../Layout";
 
-export const BoxWrapper = styled(Wrapper)`
+interface BoxWrapperI{
+  color:string
+}
+
+export const BoxWrapper = styled(Wrapper)<BoxWrapperI>`
   margin-bottom:20px;
-  display:flex;
   padding:2rem;
-  background:transparent ;
-  ${({theme}) => css`
+  ${({theme, color}) => css`
+    background:${theme.background.base};
     border-radius: ${theme.border.radius};
-    border: 1px solid ${theme.border.color};
+    border: 1px solid ${'#DCDEDD'};
+    box-shadow: 3px 3px 10px ${color};
   `}
 `

@@ -33,6 +33,7 @@ export const Nav = styled.nav`
 export const NavLink = styled.li`
   cursor:pointer;
   margin:0 1.5rem;
+  list-style:none;
   ${({theme}) => css`
     @media(max-width:${breakpoint.md}){
       font-size:${theme.size.text.lg};

@@ -1,12 +1,13 @@
 import styled, { css } from "styled-components";
-import { Section } from "../../kit/Layout";
+import { Section, Wrapper } from "../../kit/Layout";
+import { breakpoint } from "../../styles/theme";
 
 export const HeroSection = styled(Section)`
   min-height:80vh;
   display:flex;
   align-items:center;
   ${({theme}) => css`
-    background:${theme.background.primary} center center;
+    background:${theme.background.base} center center;
     background-image: url('/img/hero-bg.png');
     background-position: center, center;
     background-size:cover, contain ;
@@ -35,8 +36,19 @@ export const Number = styled.span`
   background-clip:text;
   -webkit-background-clip: text;
   color: transparent;
+  @media(max-width:${breakpoint.lg}){
+    bottom:0px;
+    font-size:6rem;
+    left:0px;
+  }
 `
-
+export const StepWrapper = styled(Wrapper)`
+  @media(max-width:${breakpoint.lg}){
+    &:not(:first-child){
+      margin-top:40px ;
+    }
+  }
+`
 export const Emoticon = styled.span`
   font-size:4rem;
 `
