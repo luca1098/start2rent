@@ -1,6 +1,5 @@
 import React from 'react'
 import Button from '../../kit/Button'
-import CountersUp from '../../kit/CounterUp'
 import { Container, Flex, Section } from '../../kit/Layout'
 import { Paragraph, SecondaryTitle } from '../../kit/Text'
 
