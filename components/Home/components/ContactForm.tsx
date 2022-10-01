@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { useForm, SubmitHandler } from "react-hook-form";
 import Button from '../../../kit/Button';
-import { Input, Form, TextArea, Checkbox } from '../../../kit/Input';
+import { Input, Form, TextArea } from '../../../kit/Input';
 import { CheckboxBase } from '../../../kit/Input/styles';
 import { Flex } from '../../../kit/Layout';
 import { Paragraph } from '../../../kit/Text';
@@ -29,7 +29,7 @@ const ContactForm:FC = () => {
       <Input {...register("email")} placeholder={'Email'} />
       <Input {...register("cellulare")} placeholder={'Numero di cellulare'} />
       <TextArea {...register("info")} placeholder={'Info aggiuntive'} />
-      <Input {...register("photo")} placeholder={'Carica Foto'} />
+      {/* <Input {...register("photo")} placeholder={'Carica Foto'} /> */}
       <Flex align='center' justify='start' noWrap margin='0 0 1rem 0'>
         <CheckboxBase type={'checkbox'} {...register("privacy")} />
         <Paragraph size='sm' secondary> Dichiaro di aver letto ed accettato la privacy policy</Paragraph>
