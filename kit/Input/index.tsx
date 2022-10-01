@@ -1,5 +1,4 @@
-import { FC } from 'react'
-import { BaseInput, Form, BaseTextArea, CheckboxBase } from "./styles"
+import { BaseInput, Form, BaseTextArea } from "./styles"
 
 export {
   BaseInput as Input,

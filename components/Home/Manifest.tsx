@@ -1,15 +1,8 @@
 import React from 'react'
 import Button from '../../kit/Button'
 import CountersUp from '../../kit/CounterUp'
-import CounterUp from '../../kit/CounterUp'
 import { Container, Flex, Section } from '../../kit/Layout'
 import { Paragraph, SecondaryTitle } from '../../kit/Text'
-
-const counters = [
-  {start:0, end:12300, label:'Nuovi Airbnb'},
-  {start:0, end:12300, label:'Proprietari profittevoli'},
-  {start:0, end:12300, label:'Crescita del mercato'},
-]
 
 const Manifest:React.FC = () => {
   return (
@@ -30,7 +23,6 @@ const Manifest:React.FC = () => {
             Se sei anche tu interessato contatta gratuitamente il nostro team! Faremo un attenta e minuziosa valutazione del tuo immobile, 
             così da capire insieme se l’affitto breve possa fare a caso tuo!
           </Paragraph>
-          {/* <CountersUp counters={counters} /> */}
           <Button onClick={() =>{}} label={'Ottieni la tua consulenza gratuita!'}/>
         </Flex>
       </Container>
