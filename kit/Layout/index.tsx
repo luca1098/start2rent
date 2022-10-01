@@ -11,13 +11,15 @@ interface FlexI {
   justify?: 'center'| 'start' | 'end' | 'around' | 'between';
   direction?: 'row' | 'column' | 'column-reverse' | 'row-reverse';
   margin?: string;
-  wrap?: boolean;
+  noWrap?: boolean;
 }
 
 interface WrapperI {
-  size: 'full' | '1/2' | '1/3' | '1/4';
+  size: 'full' | '1/2' | '1/3' | '1/4' | '2/3';
 }
-
+interface SectionI {
+  background?: 'primary' | 'secondary'
+}
 export const Container = styled.div<ContainerI>`
   margin:0 auto;
   ${({theme, background}) => css`
@@ -31,18 +33,21 @@ export const Container = styled.div<ContainerI>`
     };
   `};
 `
-export const Section = styled.section`
+export const Section = styled.section<SectionI>`
   padding:50px 0;
+  ${({theme, background}) => css`
+      background: ${theme.background[background || 'primary']};
+  `}
 `
 export const Flex = styled.div<FlexI>`
   width:100%;
   display:flex;
-  ${({align, justify, direction, margin, wrap }) => css`
+  ${({align, justify, direction, margin, noWrap }) => css`
     align-items:${getAlignJustifyDirection(align)};
     justify-content:${getAlignJustifyDirection(justify)};
     flex-direction:${direction ? direction : 'row'};
     margin:${margin ? margin : '0'};
-    flex-wrap: ${wrap ? 'wrap' : 'no-wrap'};
+    flex-wrap: ${noWrap ? 'no-wrap' : 'wrap'};
   `};
 `;
 

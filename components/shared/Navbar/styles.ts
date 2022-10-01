@@ -11,12 +11,16 @@ export const HeaderNav = styled.header`
   display:flex;
   align-items:center;
   justify-content:center;  
-  border:1px solid red;
   position:fixed;
   width:100%:
   top:0;
   left:0;
   right:0;
+  z-index:999;
+  ${({theme}) => css`
+    background:${theme.background.primary};
+    box-shadow: ${theme.shadow.navbar};
+  `}
 `
 export const Nav = styled.nav`
   position:relative;

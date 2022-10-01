@@ -8,9 +8,7 @@ const Layout:React.FC<LayoutI> = ({children}) => {
   return (
     <div>
       <Navbar links={navbarLinks}/>
-        <Container>
         {children}
-        </Container>
     </div>
   )
 }

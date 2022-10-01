@@ -1,7 +1,8 @@
 import { MenuLinkI } from "../Interfaces/navbar";
 
 export const navbarLinks:Array<MenuLinkI> = [
-  {href:'#', label:'Manifesto'},
-  {href:'#', label:'Roadmap'},
-  {href:'#', label:'Unisciti', isButton:true},
+  {href:'#', label:'Il bussines'},
+  {href:'#', label:'Perché noi'},
+  {href:'#', label:'Come iniziare'},
+  {href:'#', label:'Iniziamo!', isButton:true},
 ]

@@ -19,7 +19,9 @@ export const getAlignJustifyDirection = (status:string | undefined) => {
 export const getSize = (size:string | undefined, layout:string | undefined) => {
   switch(size){
     case '1/2' :
-      return layout === breakpoint.sm ? '100%' : '49%';
+      return layout !== breakpoint.lg ? '100%' : '49%';
+    case '2/3' :
+      return layout !== breakpoint.lg ? '100%' : '80%';
     case '1/3':
       return layout === breakpoint.sm ? '100%' : '32%';
     case '1/4':

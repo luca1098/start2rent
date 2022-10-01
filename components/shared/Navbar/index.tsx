@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import React, { useState, useRef, useEffect, useCallback} from 'react'
+import React, { useState, useRef, useEffect, useCallback, Fragment} from 'react'
 import { NavbarI } from '../../../Interfaces/navbar'
+import Button from '../../../kit/Button'
 import { Container } from '../../../kit/Layout'
 import Burger from './Burger'
 import NavbarLink from './NavbarLink'
@@ -44,12 +45,18 @@ const Navbar:React.FC<NavbarI> = ({links}) => {
             ref={navLinkWrapperRef}
           >
           {links.map( link => 
-            <NavbarLink 
-              key={link.label} 
-              href={link.href} 
-              label={link.label} 
-              onClick={() => setIsBurgerOpen(false)}
-            />
+            <Fragment key={link.label}>
+              {link.isButton 
+                ? <Button onClick={() => {}} label={link.label} />
+                : (
+                  <NavbarLink 
+                    href={link.href} 
+                    label={link.label} 
+                    onClick={() => setIsBurgerOpen(false)}
+                  />
+                ) 
+              }
+            </Fragment>
           )}
           </NavLinkWrapper>
           <Burger 
