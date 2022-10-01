@@ -4,7 +4,6 @@ import Contact from '../components/Home/Contact'
 import Hero from '../components/Home/Hero'
 import HowItWork from '../components/Home/HowItWork'
 import Manifest from '../components/Home/Manifest'
-import ShortVsClassicRent from '../components/Home/ShortVsClassicRent'
 import WhyUs from '../components/Home/WhyUs'
 import Layout from '../Layout'
 
@@ -15,7 +14,6 @@ const Home: NextPage = () => {
         <Hero />
         <Manifest />
         <WhyUs />
-        {/* <ShortVsClassicRent /> */}
         <HowItWork />
         <Contact />
       </>
