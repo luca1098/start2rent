@@ -14,16 +14,20 @@ export const Title = styled.h1<TextI>`
       align
     })
   }}
-  font-size: 4rem;
+  font-size: 3.5rem;
   line-height:1.1;
   @media(max-width:${breakpoint.sm}){
     font-size: 2.5rem;
     text-align:center
   };
+  @media(min-width: ${breakpoint.lg}){
+    font-size: 5.5rem;
+  }
 
 `
 
 export const SecondaryTitle = styled.h2<TextI>`
+  position:relative;
   ${({theme, mTop, mBottom, align, secondary }) => {
     const { primary, secondary:colorSecondary } = theme.color.title
     return getBaseText({
@@ -37,6 +41,7 @@ export const SecondaryTitle = styled.h2<TextI>`
   @media(max-width:${breakpoint.sm}){
     font-size: 1.8rem;
   };
+  
 `
 
 export const ThirdTitle = styled.h2<TextI>`
@@ -51,18 +56,36 @@ export const ThirdTitle = styled.h2<TextI>`
   }};
   font-size: 1.2rem;
 `
-
+export const UnderlineText = styled.span`
+display:inline-block;
+font-weight:700;
+position:relative;
+z-index:2;
+span{
+  position:absolute;
+  right:0 ;
+  left:0px ;
+  bottom:2px ;
+  height:10px ;
+  z-index:-1;
+  ${({theme}) => css`
+    background: ${theme.details.primary};
+  `}
+}
+`
 export const Subtitle = styled.p`
-  font-size:1.2rem;
+  font-size:1.3em;
   ${({theme}) => css`
     color: ${theme.color.text.primary};
   `};
   @media(max-width:${breakpoint.sm}){
     text-align:center
   };
+  @media(min-width: ${breakpoint.lg}){
+    font-size:1.6em;
+  }
 `
 export const Paragraph = styled.p<TextI>`
-  flex:1 0 auto ;
   ${({theme,  mTop, mBottom, align, secondary }) => {
     const { primary, secondary:colorSecondary } = theme.color.text
     return getBaseText({
@@ -86,14 +109,14 @@ export const Paragraph = styled.p<TextI>`
   }};
   @media(max-width: ${breakpoint.sm}){
     font-size: ${({theme, size}) => {
-    const { sm, md } = theme.size.text
+    const { sm, md } = theme.size.text;
     switch(size){
       case LG:
-        return md
+        return md;
       case MD:
       case SM:
       default:
-        return sm
+        return sm;
     }
-  }}
+  }};
 `

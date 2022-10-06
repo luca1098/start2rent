@@ -27,13 +27,13 @@ export const getSize = (
     case '2/3' :
       return layout !== breakpoint.lg ? '100%' : '80%';
     case '1/3':
-      return layout === breakpoint.sm
-        ? '100%' 
-        : layout === breakpoint.md
+      return layout === breakpoint.lg
+        ? '32%' 
+        : layout === breakpoint.xMd
           ? fullSizeOnMediumDisplay 
             ? '100%'
             : '49%' 
-          : '32%';
+          : '100%';
     case '1/4':
       return layout === breakpoint.sm 
         ? '100%' 

@@ -1,21 +1,34 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Rubik';
+    src: url('./fonts/Rubik/static/Rubik-SemiBold.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Karla';
+    src: url('./fonts/Karla/static/Karla-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
   *{
     box-sizing: border-box;
   }
-  html, body, textarea {
+  html, body, textarea, a, li {
     padding:0;
     margin:0;
-    font-family: sans-serif
+    font-family: Karla, sans-serif;
   }
   ul{
     padding:0 0 0 1rem;
     margin:0;
   }
-  li{
-
+  h1, h2, h3, h4, h5, h6{
+    font-family: Rubik, sans-serif;
   }
+  
   .ham {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;

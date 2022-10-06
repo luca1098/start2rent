@@ -1,9 +1,13 @@
-import { BaseInput, Form, BaseTextArea } from "./styles"
+import { Form } from "./styles"
+import Select from "./Select"
+import Input from "./Input"
+import TextArea from "./TextArea"
 
 export {
-  BaseInput as Input,
+  Select,
+  Input,
   Form,
-  BaseTextArea as TextArea
+  TextArea
 }
 
 

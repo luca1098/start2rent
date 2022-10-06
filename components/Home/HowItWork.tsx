@@ -1,19 +1,19 @@
 import React, { FC } from 'react'
 import { Container, Flex, Section } from '../../kit/Layout'
 import { Paragraph, SecondaryTitle, ThirdTitle } from '../../kit/Text'
-import { Number, StepWrapper } from './styles'
+import { Number, StepWrapper, UnderlineSmall } from './styles'
 
 const HowItWork:FC = () => {
   return (
     <Section background='base'>
       <Container>
-        <SecondaryTitle align='center'>Inizia in 3 semplici passi</SecondaryTitle>
+        <SecondaryTitle align='center'>Inizia in <UnderlineSmall>3 semplici passi<span /></UnderlineSmall></SecondaryTitle>
         <Flex justify='between' margin='5rem 0 0'>
           <StepWrapper size='1/3' fullOnMobile>
             <Flex noWrap>
             <Number>1</Number>
               <div>
-                <ThirdTitle mBottom='1rem'>✅ Valutazione Gratuita dell&apos;immobile</ThirdTitle>
+                <ThirdTitle mBottom='1rem'>✅ Valutazione dell&apos;immobile</ThirdTitle>
                 <Paragraph size='sm'>
                   Descrivici le tue esigenze e le caratteristiche della tua casa, ti daremo una stima del guadagno reale.
                   <br />

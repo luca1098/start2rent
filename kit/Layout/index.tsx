@@ -18,6 +18,7 @@ interface FlexI {
 interface WrapperI {
   size: 'full' | '1/2' | '1/3' | '1/4' | '2/3';
   fullOnMobile?: boolean
+  margin?: string;
 }
 interface SectionI {
   background?: 'primary' | 'secondary' | 'base'
@@ -42,6 +43,8 @@ export const Section = styled.section<SectionI>`
   `}
 `
 export const Flex = styled.div<FlexI>`
+  position:relative;
+  z-index:2;
   width:100%;
   display:flex;
   ${({align, justify, direction, margin, noWrap }) => css`
@@ -54,8 +57,13 @@ export const Flex = styled.div<FlexI>`
 `;
 
 export const Wrapper = styled.div<WrapperI>`
-  ${({size, fullOnMobile}) => css`
-    width: ${getSize(size, breakpoint.lg, fullOnMobile)};
+  ${({size, fullOnMobile, margin}) => css`
+    width: ${getSize(size, breakpoint.xMd, fullOnMobile)};
+    
+    @media(min-width: ${breakpoint.lg}){
+      width: ${getSize(size, breakpoint.lg, fullOnMobile)};
+    };
+    
     @media(max-width: ${breakpoint.md}){
       width: ${getSize(size, breakpoint.md, fullOnMobile)};
     };
@@ -63,4 +71,7 @@ export const Wrapper = styled.div<WrapperI>`
       width: ${getSize(size, breakpoint.sm, fullOnMobile)};
     };
   `};
+  ${({margin}) => margin && css`
+    margin:${margin};
+  `}
 `;

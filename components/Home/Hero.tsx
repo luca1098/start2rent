@@ -3,8 +3,8 @@ import Button from '../../kit/Button'
 import ImageComponent from '../../kit/Image'
 import { Container, Flex, Wrapper } from '../../kit/Layout'
 import { Subtitle, Title } from '../../kit/Text'
-import HeroImage from '../../assets/img/rent.png'
-import { HeroSection } from './styles';
+import HeroImage from '../../assets/img/hero-img.png'
+import { HeroSection, HeroWrapperText, Underline } from './styles';
 
 
 const Hero:React.FC = () => {
@@ -12,13 +12,13 @@ const Hero:React.FC = () => {
     <HeroSection>
       <Container>
         <Flex align='center'>
-          <Wrapper size='1/2'>
-            <Title>Guadagna di più con gli affitti brevi!</Title>
+          <HeroWrapperText size='1/2'>
+            <Title>Guadagna di più con gli <Underline>affitti brevi!<span /> </Underline></Title>
             <Subtitle>
-              1 proprietario d’immobile su 10 sceglie ogni giorno l’affitto breve come soluzione ideale!
+              Puntiamo al successo del tuo immobile mantenendolo in ottimo stato e prendendocene cura a 360° 
             </Subtitle>
             <Button onClick={() => {}} label={'Contattaci gratuitamente'}/>
-          </Wrapper>
+          </HeroWrapperText>
           <Wrapper size='1/2'>
             <ImageComponent src={HeroImage} alt={'Affiti brevi image'} />
           </Wrapper>

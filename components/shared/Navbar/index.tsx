@@ -15,6 +15,7 @@ import {
 
 const Navbar:React.FC<NavbarI> = ({links}) => {
   const [ isBurgerOpen, setIsBurgerOpen ] = useState(false)
+  const [ showShadow, setShowShadow ] = useState(false)
   const navLinkWrapperRef = useRef<HTMLUListElement | null>(null)
   const burgerRef = useRef<HTMLButtonElement | null>(null)
 
@@ -27,6 +28,11 @@ const Navbar:React.FC<NavbarI> = ({links}) => {
     isBurgerOpen && setIsBurgerOpen(!isBurgerOpen)
   }, [isBurgerOpen])
 
+  const handleShowShadow = () => {
+    window.pageYOffset > 100 
+      ? setShowShadow(true)
+      : setShowShadow(false) 
+  }
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutisde);
@@ -34,8 +40,15 @@ const Navbar:React.FC<NavbarI> = ({links}) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isBurgerOpen])
 
+  useEffect(() => {
+    document.addEventListener('scroll', handleShowShadow);
+    () => document.removeEventListener('scroll', handleShowShadow);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+
   return (
-    <HeaderNav>
+    <HeaderNav showShadow={showShadow} >
       <Container>
         <Nav>
         {isBurgerOpen && <Overlay />}

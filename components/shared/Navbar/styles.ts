@@ -1,4 +1,4 @@
-import React, { RefObject } from "react";
+import { RefObject } from "react";
 import styled, { css } from "styled-components";
 import { breakpoint } from "../../../styles/theme";
 interface NavLinkWrapperI {
@@ -6,8 +6,11 @@ interface NavLinkWrapperI {
   ref: RefObject<HTMLElement>
 
 }
+interface HeaderNavI {
+  showShadow:boolean
+}
 
-export const HeaderNav = styled.header`
+export const HeaderNav = styled.header<HeaderNavI>`
   display:flex;
   align-items:center;
   justify-content:center;  
@@ -18,9 +21,11 @@ export const HeaderNav = styled.header`
   right:0;
   z-index:999;
   ${({theme}) => css`
-    background:${theme.background.primary};
-    box-shadow: ${theme.shadow.navbar};
-  `}
+    background:${theme.background.base};
+  `};
+  ${({theme, showShadow}) => showShadow && css`
+    box-shadow:${theme.shadow.navbar};
+  `};
 `
 export const Nav = styled.nav`
   position:relative;
@@ -33,11 +38,13 @@ export const Nav = styled.nav`
 export const NavLink = styled.li`
   cursor:pointer;
   margin:0 1.5rem;
+  font-weight:700;
   list-style:none;
   ${({theme}) => css`
     @media(max-width:${breakpoint.md}){
       font-size:${theme.size.text.lg};
       padding:0.5rem 0;
+      margin:0 0 30px ;
     }
   `}
 `
@@ -59,7 +66,7 @@ export const NavLinkWrapper = styled.ul<NavLinkWrapperI>`
       flex-direction:column;
       align-items:start;
       padding:80px 20px;
-      background:${theme.background.primary};
+      background:${theme.background.base};
     }
   `}
 `

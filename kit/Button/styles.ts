@@ -6,7 +6,7 @@ interface BaseButtonI {
 }
 
 export const BaseButton = styled.button<BaseButtonI>`
-  padding: .6rem 1rem;
+  padding: .8rem 2rem;
   min-width:150px;
   border: none;
   font-weight:700;

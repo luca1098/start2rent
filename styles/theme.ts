@@ -3,7 +3,8 @@ import { DefaultTheme } from "styled-components"
 const breakpoint = {
   sm : '450px',
   md : '768px',
-  lg : '1100px',
+  xMd : '1024px',
+  lg : '1200px',
 }
 
 //layout
@@ -18,15 +19,19 @@ const SECONDARY_TEXT = '#f1f1f1'
 const SECONDARY_TITLE = '#fff'
 const BACKGROUND = '#EFEFEF'
 const BACKGROUND_BASE = '#FDFDFD'
-const BACKGROUND_SECONDARY = '#336647'
+const BACKGROUND_SECONDARY = '#618974' //'#336647'
 const BORDER_COLOR = '#1D1F2F'
 
 //button
 const PRIMARY_BTN_TEXT = '#FFF';
-const PRIMARY_BTN_BG = '#2C7BC9';
-const PRIMARY_BTN_BG_HOVER = '#0E6BA8';
+const PRIMARY_BTN_BG = '#7f00ff';
+const PRIMARY_BTN_BG_HOVER = '#561899';
 
-const BORDER_RADIUS_BTN = '7px'
+const DETTAILS_PRIMARY = '#c9f767'
+
+const BORDER_RADIUS_BTN = '10px'
+
+const SECONDARY_SHADOW = 'rgba(51,102,71,.5)'
 
 const baseTheme:DefaultTheme = {
   layout: {
@@ -40,6 +45,9 @@ const baseTheme:DefaultTheme = {
   border:{
     color:BORDER_COLOR,
     radius:BORDER_RADIUS_BTN
+  },
+  details: {
+    primary:DETTAILS_PRIMARY,
   },
   background: {
     primary:BACKGROUND,
@@ -84,7 +92,8 @@ const lightTheme = {
     },
   },
   shadow: {
-    navbar :'0px 0px 20px rgba(0, 0, 0, .4);'
+    navbar :'0px 0px 20px rgba(0, 0, 0, .2);',
+    secondary: `5px 5px 15px ${SECONDARY_SHADOW}`,
   }
 }
 const darkTheme = {}
