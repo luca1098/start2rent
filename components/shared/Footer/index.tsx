@@ -9,9 +9,9 @@ import Logo from '../../../assets/logo/logo-h.png'
 import { IconInstagram, IconMail, IconWhatsapp } from '../../../kit/Icons'
 
 const socialsFooterCofig = [
-  {icon:IconInstagram, link:''},
-  {icon:IconWhatsapp, link:''},
-  {icon:IconMail, link:'mailto:info@start2rent.com'},
+  {icon:IconInstagram, link:'',id:1},
+  {icon:IconWhatsapp, link:'',id:2},
+  {icon:IconMail, link:'mailto:info@start2rent.com', id:3},
 ]
 
 const Footer:React.FC<NavbarI> = ({links}) => {
@@ -43,9 +43,9 @@ const Footer:React.FC<NavbarI> = ({links}) => {
               <ThirdTitle mBottom='20px'>Social</ThirdTitle>
               <Flex justify='center'>
                 {socialsFooterCofig.map(s => {
-                  const {icon:Icon, link} = s
+                  const {icon:Icon, link, id} = s || {}
                   return (
-                    <SocialBox href={link} target={'_blank'}>
+                    <SocialBox href={link} target={'_blank'} key={id}>
                       <Icon size={25} />
                     </SocialBox>
                   )
