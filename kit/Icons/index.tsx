@@ -3,6 +3,7 @@ import { BiShieldQuarter, BiHomeAlt, BiDonateHeart } from 'react-icons/bi'
 import { GiBroom } from 'react-icons/gi'
 import { GrDocumentTime } from 'react-icons/gr'
 import { BsWhatsapp, BsInstagram } from 'react-icons/bs'
+import { FiMail } from 'react-icons/fi'
 
 
 
@@ -17,4 +18,5 @@ export {
   BiDonateHeart as IconCare,
   BsWhatsapp as IconWhatsapp,
   BsInstagram as IconInstagram,
+  FiMail as IconMail,
 }

@@ -57,7 +57,7 @@ export const Flex = styled.div<FlexI>`
 `;
 
 export const Wrapper = styled.div<WrapperI>`
-  ${({size, fullOnMobile, margin}) => css`
+  ${({size, fullOnMobile}) => css`
     width: ${getSize(size, breakpoint.xMd, fullOnMobile)};
     
     @media(min-width: ${breakpoint.lg}){

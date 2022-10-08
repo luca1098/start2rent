@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Section, Wrapper } from "../../kit/Layout";
+import { Flex, Section, Wrapper } from "../../kit/Layout";
 import { breakpoint } from "../../styles/theme";
 
 export const HeroSection = styled(Section)`
@@ -13,9 +13,9 @@ export const HeroSection = styled(Section)`
     background-size:cover, contain ;
   `};
 `
-export const HeroWrapperText = styled(Wrapper)`
-  @media(max-width:${breakpoint.xMd}){
-    margin:80px 0 ;
+export const HeroFlex = styled(Flex)`
+  @media(max-width:${breakpoint.lg}){
+    flex-direction: column-reverse ;
   }
 `
 export const Underline = styled.span`

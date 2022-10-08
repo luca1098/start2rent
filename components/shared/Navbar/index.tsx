@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState, useRef, useEffect, useCallback, Fragment} from 'react'
 import { NavbarI } from '../../../Interfaces/navbar'
@@ -11,7 +12,7 @@ import {
   NavLinkWrapper,  
   Overlay 
 } from './styles'
-
+import Logo from '../../../assets/logo/logo.png'
 
 const Navbar:React.FC<NavbarI> = ({links}) => {
   const [ isBurgerOpen, setIsBurgerOpen ] = useState(false)
@@ -52,7 +53,10 @@ const Navbar:React.FC<NavbarI> = ({links}) => {
       <Container>
         <Nav>
         {isBurgerOpen && <Overlay />}
-        <Link href={'/'}>Logo</Link>
+        <Link href={'/'}>
+
+          <Image src={Logo} alt={'Start2Rent logo'} width={'120px'} height={'40px'}/>
+        </Link>
           <NavLinkWrapper 
             isBurgerOpen={isBurgerOpen} 
             ref={navLinkWrapperRef}
