@@ -67,6 +67,13 @@ export const socialConfig = [
   }
 ]
 
+export const sectionId = {
+  hero: 'hero',
+  business: 'business',
+  whyUs: 'why-us',
+  start: 'start',
+  contact: 'contact'
+}
 
 export const optionFormConfig = [
   {value:'Monolocale', label: 'Monolocale'},
@@ -75,4 +82,25 @@ export const optionFormConfig = [
   {value:'Stanza', label: 'Stanza'},
   {value:'Villa', label: 'Villa'},
   {value:'Altro', label: 'Altro (Specificalo nelle info aggiuntive)'},
+]
+
+export const statistiche = [
+  {
+    title: 'Incremento Affitto breve', 
+    shortCopy: 'Incremento di propietari che optano per l\'affitto breve rispetto al 2021', 
+    percentuale:'7%', 
+    img:'' 
+  },
+  {
+    title: 'Tasso occupazione', 
+    shortCopy: 'Il tasso di occupazione in aumento rispetto al 2021', 
+    percentuale:'98%', 
+    img:''
+  },
+  {
+    title: 'Rischio di morosita', 
+    shortCopy: 'In questo bussiness non esiste il rischio di morosità', 
+    percentuale:'0%', 
+    img:''
+  },
 ]

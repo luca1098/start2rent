@@ -63,16 +63,12 @@ const Navbar:React.FC<NavbarI> = ({links}) => {
           >
           {links.map( link => 
             <Fragment key={link.label}>
-              {link.isButton 
-                ? <Button onClick={() => {}} label={link.label} />
-                : (
-                  <NavbarLink 
-                    href={link.href} 
-                    label={link.label} 
-                    onClick={() => setIsBurgerOpen(false)}
-                  />
-                ) 
-              }
+              <NavbarLink 
+                href={link.href} 
+                label={link.label} 
+                isButton={link.isButton}
+                onClick={() => setIsBurgerOpen(false)}
+              />
             </Fragment>
           )}
           </NavLinkWrapper>

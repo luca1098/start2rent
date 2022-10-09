@@ -1,11 +1,12 @@
 import React, { FC } from 'react'
 import { Container, Flex, Section } from '../../kit/Layout'
 import { Paragraph, SecondaryTitle, ThirdTitle } from '../../kit/Text'
+import { sectionId } from './config'
 import { Number, StepWrapper, UnderlineSmall } from './styles'
 
 const HowItWork:FC = () => {
   return (
-    <Section background='base'>
+    <Section background='base' id={sectionId.start}>
       <Container>
         <SecondaryTitle align='center'>Inizia in <UnderlineSmall>3 semplici passi<span /></UnderlineSmall></SecondaryTitle>
         <Flex justify='between' margin='5rem 0 0'>

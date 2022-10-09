@@ -1,8 +1,16 @@
 import { MenuLinkI } from "../Interfaces/navbar";
+import { sectionId } from "../components/Home/config";
+
+const { 
+  contact,
+  business,
+  whyUs,
+  start
+} = sectionId
 
 export const navbarLinks:Array<MenuLinkI> = [
-  {href:'#', label:'Il bussines'},
-  {href:'#', label:'Perché noi'},
-  {href:'#', label:'Come iniziare'},
-  {href:'#', label:'Iniziamo!', isButton:true},
+  {href:`/#${business}`, label:'Il bussines'},
+  {href:`/#${whyUs}`, label:'Perché noi'},
+  {href:`/#${start}`, label:'Come iniziare'},
+  {href:`/#${contact}`, label:'Iniziamo!', isButton:true},
 ]

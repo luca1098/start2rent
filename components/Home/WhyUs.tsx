@@ -3,12 +3,12 @@ import Box from '../../kit/Box'
 import Button from '../../kit/Button'
 import { Container, Flex } from '../../kit/Layout'
 import { Paragraph, SecondaryTitle, ThirdTitle, UnderlineText } from '../../kit/Text'
-import { services } from './config'
+import { sectionId, services } from './config'
 import { WhyUsSection, Emoticon, UnderlineSmall } from './styles'
 
 const WhyUs:React.FC = () => {
   return (
-    <WhyUsSection>
+    <WhyUsSection id={sectionId.whyUs}>
       <Container>
         <SecondaryTitle align='center'>I vantaggi di averci come<UnderlineSmall> partner <span /> </UnderlineSmall></SecondaryTitle>
         <Paragraph align='center' mTop='30px'>

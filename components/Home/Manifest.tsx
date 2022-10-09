@@ -3,33 +3,13 @@ import Box from '../../kit/Box'
 import Button from '../../kit/Button'
 import { Container, Flex, Section } from '../../kit/Layout'
 import { Paragraph, SecondaryTitle, ThirdTitle } from '../../kit/Text'
+import { sectionId, statistiche } from './config'
 import { UnderlineSmall, Percentage } from './styles'
-
-const statistiche = [
-  {
-    title: 'Incremento Affitto breve', 
-    shortCopy: 'Incremento di propietari che optano per l\'affitto breve rispetto al 2021', 
-    percentuale:'7%', 
-    img:'' 
-  },
-  {
-    title: 'Tasso occupazione', 
-    shortCopy: 'Il tasso di occupazione in aumento rispetto al 2021', 
-    percentuale:'98%', 
-    img:''
-  },
-  {
-    title: 'Rischio di morosita', 
-    shortCopy: 'In questo bussiness non esiste il rischio di morosità', 
-    percentuale:'0%', 
-    img:''
-  },
-]
 
 
 const Manifest:React.FC = () => {
   return (
-    <Section background='base'>
+    <Section background='base' id={sectionId.business}>
       <Container>
         <Flex direction='column' align='center'>
           <SecondaryTitle 

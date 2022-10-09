@@ -9,11 +9,12 @@ import {
   Underline,
   HeroFlex
 } from './styles';
+import { sectionId } from './config'
 
 
 const Hero:React.FC = () => {
   return (
-    <HeroSection>
+    <HeroSection id={sectionId.hero}>
       <Container>
         <HeroFlex align='center'>
           <Wrapper size='1/2'>

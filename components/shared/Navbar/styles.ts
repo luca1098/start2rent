@@ -9,6 +9,10 @@ interface NavLinkWrapperI {
 interface HeaderNavI {
   showShadow:boolean
 }
+interface NavLinkI {
+  isButton?:boolean
+  secondary?:boolean
+}
 
 export const HeaderNav = styled.header<HeaderNavI>`
   display:flex;
@@ -35,7 +39,7 @@ export const Nav = styled.nav`
   padding .8rem 0;
 `
 
-export const NavLink = styled.li`
+export const NavLink = styled.li<NavLinkI>`
   cursor:pointer;
   margin:0 1.5rem;
   font-weight:700;
@@ -45,6 +49,26 @@ export const NavLink = styled.li`
       font-size:${theme.size.text.lg};
       padding:0.5rem 0;
       margin:0 0 30px ;
+    }
+  `}
+  ${({isButton, theme, secondary}) => isButton && css`
+    padding: .8rem 2rem;
+    min-width:150px;
+    border: none;
+    font-weight:700;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition: ${theme.transition.default};
+    border-radius:${theme.button.border.radius};
+    font-size:1rem;
+    color:${theme.button[secondary? 'secondary' : 'primary'].text};
+    background:${theme.button[secondary? 'secondary' : 'primary'].background};
+    &:hover{
+      color:${theme.button[secondary? 'secondary' : 'primary'].textHover};
+      background:${theme.button[secondary? 'secondary' : 'primary'].backgroundHover};
+    };
+    @media(max-width:${breakpoint.lg}){
+      font-size:${theme.size.text.md};
     }
   `}
 `

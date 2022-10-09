@@ -16,6 +16,9 @@ const GlobalStyle = createGlobalStyle`
   *{
     box-sizing: border-box;
   }
+  html{
+    scroll-behavior: smooth;
+  }
   html, body, textarea, a, li {
     padding:0;
     margin:0;
