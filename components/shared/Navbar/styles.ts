@@ -54,6 +54,7 @@ export const NavLink = styled.li<NavLinkI>`
   ${({isButton, theme, secondary}) => isButton && css`
     padding: .8rem 2rem;
     min-width:150px;
+    margin: 0;
     border: none;
     font-weight:700;
     text-transform:uppercase;
@@ -61,6 +62,8 @@ export const NavLink = styled.li<NavLinkI>`
     transition: ${theme.transition.default};
     border-radius:${theme.button.border.radius};
     font-size:1rem;
+    text-align: center;
+    display: inline-block ;
     color:${theme.button[secondary? 'secondary' : 'primary'].text};
     background:${theme.button[secondary? 'secondary' : 'primary'].background};
     &:hover{

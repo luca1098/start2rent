@@ -3,6 +3,7 @@ import Box from '../../kit/Box'
 import Button from '../../kit/Button'
 import { Container, Flex } from '../../kit/Layout'
 import { Paragraph, SecondaryTitle, ThirdTitle, UnderlineText } from '../../kit/Text'
+import NavbarLink from '../shared/Navbar/NavbarLink'
 import { sectionId, services } from './config'
 import { WhyUsSection, Emoticon, UnderlineSmall } from './styles'
 
@@ -29,7 +30,11 @@ const WhyUs:React.FC = () => {
           })}
         </Flex>
         <Flex justify='center' margin='30px 0'>
-          <Button label='Entra in contatto' onClick={() => {}} />
+          <NavbarLink 
+            label='Entra in contatto'
+            href={`/#${sectionId.contact}`} 
+            isButton
+          />
         </Flex>
       </Container>
     </WhyUsSection>

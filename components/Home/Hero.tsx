@@ -10,6 +10,7 @@ import {
   HeroFlex
 } from './styles';
 import { sectionId } from './config'
+import NavbarLink from '../shared/Navbar/NavbarLink'
 
 
 const Hero:React.FC = () => {
@@ -22,7 +23,11 @@ const Hero:React.FC = () => {
             <Subtitle>
               Puntiamo al successo del tuo immobile mantenendolo in ottimo stato e prendendocene cura a 360° 
             </Subtitle>
-            <Button onClick={() => {}} label={'Contattaci gratuitamente'}/>
+              <NavbarLink 
+                label={'Contattaci gratuitamente'}
+                href={`/#${sectionId.contact}`}
+                isButton
+              />
           </Wrapper>
           <Wrapper size='1/2'>
             <ImageComponent src={HeroImage} alt={'Affiti brevi image'} />

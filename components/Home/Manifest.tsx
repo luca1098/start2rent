@@ -3,6 +3,7 @@ import Box from '../../kit/Box'
 import Button from '../../kit/Button'
 import { Container, Flex, Section } from '../../kit/Layout'
 import { Paragraph, SecondaryTitle, ThirdTitle } from '../../kit/Text'
+import NavbarLink from '../shared/Navbar/NavbarLink'
 import { sectionId, statistiche } from './config'
 import { UnderlineSmall, Percentage } from './styles'
 
@@ -38,7 +39,11 @@ const Manifest:React.FC = () => {
             Se sei anche tu interessato contatta gratuitamente il nostro team! Faremo un attenta e minuziosa valutazione del tuo immobile, 
             così da capire insieme se l’affitto breve possa fare a caso tuo!
           </Paragraph>
-          <Button onClick={() =>{}} label={'Ottieni la tua valutazione gratuita!'}/>
+          <NavbarLink 
+            href={`/#${sectionId.contact}`} 
+            label={'Ottieni la tua valutazione gratuita!'}
+            isButton 
+            />
         </Flex>
       </Container>
     </Section>
