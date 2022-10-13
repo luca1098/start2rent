@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Script from 'next/script'
 import Contact from '../components/Home/Contact'
 import Hero from '../components/Home/Hero'
 import HowItWork from '../components/Home/HowItWork'
@@ -9,6 +10,12 @@ import Layout from '../Layout'
 
 const Home: NextPage = () => {
   return (
+    <>
+    <Script 
+      id='recaptcha'
+      strategy="afterInteractive"
+      src='https://www.google.com/recaptcha/api.js'
+    />
     <Layout>
       <>
         <Hero />
@@ -18,7 +25,7 @@ const Home: NextPage = () => {
         <Contact />
       </>
     </Layout>
-    
+    </>
   )
 }
 

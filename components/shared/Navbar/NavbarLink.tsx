@@ -10,7 +10,9 @@ const NavbarLink:React.FC<MenuLinkI> = ({
   isButton
 }) => 
   <Link href={href}>
-    <NavLink onClick={onClick} isButton={isButton}>{label}</NavLink>
+      <NavLink onClick={onClick} isButton={isButton}>
+        <a>{label} </a>
+      </NavLink>
   </Link>
 
 export default NavbarLink

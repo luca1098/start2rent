@@ -12,6 +12,10 @@ import {
 import WhatsAppQr from '../../assets/img/qrCodeWhatsApp.png'
 import InstaQr from '../../assets/img/qrCodeInstagram.png'
 
+interface optionConfigI {
+  value: string | null
+  label:string
+}
 
 export const services = [
   {
@@ -57,13 +61,13 @@ export const socialConfig = [
     name: 'WhatsApp', 
     icon:IconWhatsapp, 
     qrCode:WhatsAppQr, 
-    link:'', 
+    link:'https://wa.me/3881839774?text=Ciao%20Start2Rent,%20mi%20piacerebbe%20ricevere%20maggiori%20informazioni!', 
   },
   {
     name: 'Instagram', 
     icon:IconInstagram, 
     qrCode:InstaQr, 
-    link:'',
+    link:'https://instagram.com/start2rentmanagement?igshid=YmMyMTA2M2Y=',
   }
 ]
 
@@ -75,7 +79,8 @@ export const sectionId = {
   contact: 'contact'
 }
 
-export const optionFormConfig = [
+export const optionFormConfig:Array<optionConfigI> = [
+  {value:null, label: '- Scegli la tipologia -'},
   {value:'Monolocale', label: 'Monolocale'},
   {value:'Bilocale/trilocale', label: 'Bilocale/trilocale'},
   {value:'Plurilocale', label: 'Plurilocale (oltre 3 locali)'},

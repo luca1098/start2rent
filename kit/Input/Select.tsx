@@ -1,10 +1,11 @@
 import React, { FC } from 'react'
 import { Flex, Wrapper } from '../Layout'
+import ErrorMessage from './ErrorMessage'
 import { BaseSelect, Label } from './styles'
 
 interface OptionI{
-  label:string
-  value:string
+  label:string 
+  value:string | null
 }
 
 interface SelectI {
@@ -14,17 +15,29 @@ interface SelectI {
   [rest:string]: any
 }
 
-const Select:FC<SelectI> = ({label, options, size, ...restProps}) => {
+const Select:FC<SelectI> = ({
+  label, 
+  options, 
+  size, 
+  name,
+  register,
+  validation,
+  error,
+  ...restProps
+}) => {
   return (
     <Wrapper size={size}>
       <Flex direction='column'>
         {label && <Label>{label}</Label>}
-        <BaseSelect {...restProps}>
-          {options.length > 0 
-          ? options.map(o => <option key={o.value} value={o.value}>{o.label}</option>)
-          : 'test'
-        } 
+        <BaseSelect 
+          {...restProps} 
+          {...(register && name ? register(name, validation ? validation : {}) : {})}
+        >
+          {options?.map(o => 
+            <option key={o.label} value={o.value || '' }>{o.label}</option>
+          )} 
         </BaseSelect>
+        {error && <ErrorMessage message={error.message} />}
       </Flex>
     </Wrapper>
   )
