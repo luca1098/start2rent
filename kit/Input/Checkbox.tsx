@@ -18,7 +18,7 @@ const Checkbox:FC<CheckboxI> = ({
   children
 }) => {
   return (
-    <Wrapper size={size} margin='0 0 1rem 0'>
+    <Wrapper size={size} margin='1rem 0'>
     <Flex align='start' justify='start' margin='0 0 .5rem 0'>
       <CheckboxBase 
         type={'checkbox'}  

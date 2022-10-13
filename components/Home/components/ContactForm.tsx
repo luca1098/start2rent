@@ -9,7 +9,6 @@ import {sendEmail} from '../../../utils/email';
 import Feedback from '../../../kit/Feedback';
 import { handleOnlyNumbers } from '../../../utils/formatters';
 import { validation } from '../validation';
-import useRecaptcha from '../../../hooks/useRecaptcha';
 
 export interface ContactFormI{
   tipologia:string
@@ -20,6 +19,7 @@ export interface ContactFormI{
   email:`${string}@${string}.${string}`
   privacy:boolean
   name:string
+  recaptcha:string
   [rest:string]: any
 }
 
@@ -33,13 +33,7 @@ const ContactForm:FC = () => {
   const [feedbackType, setFeedbackType] = useState<'S' | 'A' | 'E'>('S')
   const [feedbackMessage, setFeedbackMessage] = useState<string>('')
   const [showFeedback, setShowFeedback] = useState<boolean>(false)
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>('')
   const [formSendLoading, setFormSendLoading] = useState<boolean>(false)
-  const { Recaptcha } = useRecaptcha()
-  const handleCaptcha = useCallback( (token:string | null) => {
-    !token && setRecaptchaToken(token)
-  }, [])
-
   const callback = (response:EmailJSResponseStatus | any) => {
     if(response?.status === 200){
       setFeedbackMessage('Messaggio inviato con successo!')
@@ -56,12 +50,8 @@ const ContactForm:FC = () => {
 
   const onSubmit:SubmitHandler<ContactFormI> = async (values, e) => {
     e?.preventDefault()
-    const valuesWithRecaptcha = {...values}
-    if(recaptchaToken){
-      valuesWithRecaptcha['g-recaptcha-response'] = recaptchaToken
-    }
     setFormSendLoading(true)
-    sendEmail(valuesWithRecaptcha,callback)
+    sendEmail(values,callback)
   };
 
   return (
@@ -128,6 +118,16 @@ const ContactForm:FC = () => {
         register={register}
         name="info"
       />
+      <Input 
+        size='full'
+        label='Quanto fa 1+1?*'
+        placeholder={'1+1='} 
+        name="recaptcha"
+        register={register} 
+        validation={validation['recaptcha']}
+        error={errors.recaptcha}
+        caption={'Sei un umano? Dimostralo, rispondendo a questa semplice addizione'}
+      />
       <Checkbox 
         name='privacy' 
         size='full'
@@ -137,7 +137,6 @@ const ContactForm:FC = () => {
       >
         <Paragraph size='sm'>Dichiaro di aver letto ed accettato la <a href='https://www.iubenda.com/privacy-policy/44755385' target={'_blank'} rel="noreferrer"> privacy policy</a></Paragraph> 
       </Checkbox>
-      <Recaptcha onChange={handleCaptcha} />
       <Button 
         type={'submit'} 
         label={'Invia'} 

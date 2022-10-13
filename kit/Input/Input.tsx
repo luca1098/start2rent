@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { Flex, Wrapper } from '../Layout'
 import ErrorMessage from './ErrorMessage'
-import { BaseInput, Label } from './styles'
+import { BaseInput, Label, Caption } from './styles'
 
 interface BaseInputI {
   widthHalf?:boolean
@@ -18,6 +18,7 @@ const Input:FC<BaseInputI> = ({
   name, 
   validation,
   error,
+  caption,
   ...restProps
 }) => {
   return (
@@ -32,6 +33,7 @@ const Input:FC<BaseInputI> = ({
             validation ? validation : {}
           ) : {} )}
         />
+        {caption && <Caption size='sm'>{caption}</Caption>}
         {error && <ErrorMessage message={error.message} />}
       </Flex>
     </Wrapper>

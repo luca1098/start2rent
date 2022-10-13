@@ -13,6 +13,13 @@ export const validation = {
   privacy:{
     required:requiredMessage
   },
+  recaptcha:{
+    required:requiredMessage,
+    validate:(value:string) => (
+      value === '2' || value === 'due'  ||
+      value === 'DUE' || value === 'Due' 
+    ) || 'Risultato non corretto... riprova!'
+  },
   cellulare:{
     required:requiredMessage,
     valueAsNumber: true,
