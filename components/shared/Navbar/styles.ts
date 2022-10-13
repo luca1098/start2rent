@@ -56,8 +56,11 @@ export const NavLink = styled.li<NavLinkI>`
     min-width:150px;
     margin: 0;
     border: none;
-    font-weight:700;
-    text-transform:uppercase;
+    a{
+      font-weight:700;
+      text-transform:uppercase;
+      font-family:Arial, sans-serif;
+    }
     cursor:pointer;
     transition: ${theme.transition.default};
     border-radius:${theme.button.border.radius};
@@ -72,6 +75,9 @@ export const NavLink = styled.li<NavLinkI>`
     };
     @media(max-width:${breakpoint.lg}){
       font-size:${theme.size.text.md};
+    }
+    @media(max-width:${breakpoint.md}){
+      padding: .8rem 2rem;
     }
   `}
 `

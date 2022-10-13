@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { Flex, Wrapper } from '../Layout'
+import ErrorMessage from './ErrorMessage'
 import { BaseInput, Label } from './styles'
 
 interface BaseInputI {
@@ -9,15 +10,32 @@ interface BaseInputI {
   [rest:string]: any
 }
 
-const Select:FC<BaseInputI> = ({label, size, widthHalf, ...restProps}) => {
+const Input:FC<BaseInputI> = ({
+  label, 
+  size, 
+  widthHalf, 
+  register, 
+  name, 
+  validation,
+  error,
+  ...restProps
+}) => {
   return (
     <Wrapper size={size}>
       <Flex direction='column'>
         {label && <Label>{label}</Label>}
-        <BaseInput {...restProps} widthHalf={widthHalf}/>
+        <BaseInput  
+          {...restProps} 
+          widthHalf={widthHalf}
+          {...(register && name ? register(
+            name,
+            validation ? validation : {}
+          ) : {} )}
+        />
+        {error && <ErrorMessage message={error.message} />}
       </Flex>
     </Wrapper>
   )
 }
 
-export default Select
+export default Input

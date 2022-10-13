@@ -1,4 +1,4 @@
-import { AiOutlinePlus, AiOutlineTrophy } from 'react-icons/ai'
+import { AiOutlinePlus, AiOutlineTrophy, AiOutlineCloseCircle } from 'react-icons/ai'
 import { BiShieldQuarter, BiHomeAlt, BiDonateHeart } from 'react-icons/bi'
 import { GiBroom } from 'react-icons/gi'
 import { GrDocumentTime } from 'react-icons/gr'
@@ -19,4 +19,5 @@ export {
   BsWhatsapp as IconWhatsapp,
   BsInstagram as IconInstagram,
   FiMail as IconMail,
+  AiOutlineCloseCircle as IconClose
 }
