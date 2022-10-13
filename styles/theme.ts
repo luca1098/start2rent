@@ -70,10 +70,7 @@ const baseTheme:DefaultTheme = {
       md: '1.3rem',
       lg:'1.6rem'
     }
-  }
-}
-
-const lightTheme = {
+  },
   button:{
     border:{
       radius:BORDER_RADIUS_BTN,
@@ -95,6 +92,9 @@ const lightTheme = {
     navbar :'0px 0px 20px rgba(0, 0, 0, .2);',
     secondary: `5px 5px 15px ${SECONDARY_SHADOW}`,
   }
+}
+
+const lightTheme = {
 }
 const darkTheme = {}
 

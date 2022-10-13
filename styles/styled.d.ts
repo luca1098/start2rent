@@ -40,6 +40,27 @@ declare module 'styled-components' {
         md: string,
         lg:string
       }
-    }
+    },
+    button:{
+      border:{
+        radius:string,
+      },
+      primary: {
+        text: string,
+        background:string,
+        textHover: string,
+        backgroundHover:string,
+      },
+      secondary: {
+        text: string,
+        background:string,
+        textHover: string,
+        backgroundHover:string,
+      },
+    },
+    shadow: {
+      navbar :string,
+      secondary: string,
+  }
   }
 }
