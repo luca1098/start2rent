@@ -51,15 +51,23 @@ export const NavLink = styled.li<NavLinkI>`
       margin:0 0 30px ;
     }
   `}
+  a{
+    color: ${({theme}) => theme.color.title.primary};
+  }
   ${({isButton, theme, secondary}) => isButton && css`
     padding: .8rem 2rem;
     min-width:150px;
     margin: 0;
     border: none;
     a{
+      color:${theme.button[secondary? 'secondary' : 'primary'].text};
       font-weight:700;
       text-transform:uppercase;
       font-family:Arial, sans-serif;
+      &:hover{
+      color:${theme.button[secondary? 'secondary' : 'primary'].textHover};
+      background:${theme.button[secondary? 'secondary' : 'primary'].backgroundHover};
+    };
     }
     cursor:pointer;
     transition: ${theme.transition.default};
@@ -67,12 +75,8 @@ export const NavLink = styled.li<NavLinkI>`
     font-size:1rem;
     text-align: center;
     display: inline-block ;
-    color:${theme.button[secondary? 'secondary' : 'primary'].text};
     background:${theme.button[secondary? 'secondary' : 'primary'].background};
-    &:hover{
-      color:${theme.button[secondary? 'secondary' : 'primary'].textHover};
-      background:${theme.button[secondary? 'secondary' : 'primary'].backgroundHover};
-    };
+
     @media(max-width:${breakpoint.lg}){
       font-size:${theme.size.text.md};
     }
