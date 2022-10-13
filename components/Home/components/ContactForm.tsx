@@ -132,7 +132,7 @@ const ContactForm:FC = () => {
         validation={validation['privacy']}
         error={errors.privacy}
       >
-        <Paragraph size='sm'>Dichiaro di aver letto ed accettato la <a href='https://www.iubenda.com/privacy-policy/44755385' target={'_blank'}> privacy policy</a></Paragraph> 
+        <Paragraph size='sm'>Dichiaro di aver letto ed accettato la <a href='https://www.iubenda.com/privacy-policy/44755385' target={'_blank'} rel="noreferrer"> privacy policy</a></Paragraph> 
       </Checkbox>
       <Recaptcha onChange={token =>setRecaptchaToken(token)}/>
       <Button 
