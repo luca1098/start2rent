@@ -1,8 +1,11 @@
 import styled, {css} from "styled-components";
 import { breakpoint } from "../../styles/theme";
+import { Flex } from "../Layout";
+import { Paragraph } from "../Text";
 interface BaseInputI {
   widthHalf?:boolean
 }
+
 
 export const BaseInput = styled.input<BaseInputI>`
   padding:.5rem 1rem;
@@ -70,6 +73,11 @@ export const Form = styled.form`
   ${({theme}) => css`
     background:${theme.background.base};
     border-radius:${theme.border.radius};
-    box-shadow: 7px 7px 0 ${theme.background.secondary}
+    box-shadow: 7px 7px 0 ${theme.background.secondary};
   `}
+`
+
+export const ErrorLabel = styled(Paragraph)`
+  font-weight:700;
+  color: red;
 `

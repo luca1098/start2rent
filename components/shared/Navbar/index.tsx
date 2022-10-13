@@ -53,9 +53,10 @@ const Navbar:React.FC<NavbarI> = ({links}) => {
       <Container>
         <Nav>
         {isBurgerOpen && <Overlay />}
-        <Link href={'/'}>
-
+        <Link href={'/'} passHref>
+          <a>
           <Image src={Logo} alt={'Start2Rent logo'} width={'120px'} height={'40px'}/>
+          </a>
         </Link>
           <NavLinkWrapper 
             isBurgerOpen={isBurgerOpen} 
