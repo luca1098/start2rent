@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useCallback, useState } from 'react'
 import { useForm, SubmitHandler } from "react-hook-form";
 import Button from '../../../kit/Button';
 import { Input, Form, TextArea, Select, Checkbox } from '../../../kit/Input';
@@ -9,7 +9,6 @@ import {sendEmail} from '../../../utils/email';
 import Feedback from '../../../kit/Feedback';
 import { handleOnlyNumbers } from '../../../utils/formatters';
 import { validation } from '../validation';
-import ReCAPTCHA from "react-google-recaptcha";
 import useRecaptcha from '../../../hooks/useRecaptcha';
 
 export interface ContactFormI{
@@ -37,6 +36,9 @@ const ContactForm:FC = () => {
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>('')
   const [formSendLoading, setFormSendLoading] = useState<boolean>(false)
   const { Recaptcha } = useRecaptcha()
+  const handleCaptcha = useCallback( (token:string | null) => {
+    !token && setRecaptchaToken(token)
+  }, [])
 
   const callback = (response:EmailJSResponseStatus | any) => {
     if(response?.status === 200){
@@ -52,7 +54,8 @@ const ContactForm:FC = () => {
     setFormSendLoading(false)
   } 
 
-  const onSubmit:SubmitHandler<ContactFormI> = async values => {
+  const onSubmit:SubmitHandler<ContactFormI> = async (values, e) => {
+    e?.preventDefault()
     const valuesWithRecaptcha = {...values}
     if(recaptchaToken){
       valuesWithRecaptcha['g-recaptcha-response'] = recaptchaToken
@@ -134,7 +137,7 @@ const ContactForm:FC = () => {
       >
         <Paragraph size='sm'>Dichiaro di aver letto ed accettato la <a href='https://www.iubenda.com/privacy-policy/44755385' target={'_blank'} rel="noreferrer"> privacy policy</a></Paragraph> 
       </Checkbox>
-      <Recaptcha onChange={token =>setRecaptchaToken(token)}/>
+      <Recaptcha onChange={handleCaptcha} />
       <Button 
         type={'submit'} 
         label={'Invia'} 
