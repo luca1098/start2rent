@@ -79,5 +79,10 @@ export const Form = styled.form`
 
 export const ErrorLabel = styled(Paragraph)`
   font-weight:700;
-  color: red;
+  color: #aa1919;
 `
+
+export const Caption = styled(Paragraph)`
+  opacity:.8 ;
+`
+
