@@ -61,7 +61,7 @@ export const socialConfig = [
     name: 'WhatsApp', 
     icon:IconWhatsapp, 
     qrCode:WhatsAppQr, 
-    link:'https://wa.me/3881839774?text=Ciao%20Start2Rent,%20mi%20piacerebbe%20ricevere%20maggiori%20informazioni!', 
+    link:'https://wa.me/+393881839774?text=Ciao%20Start2Rent,%20mi%20piacerebbe%20ricevere%20maggiori%20informazioni!', 
   },
   {
     name: 'Instagram', 

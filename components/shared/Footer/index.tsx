@@ -52,7 +52,7 @@ const Footer:React.FC<NavbarI> = ({links}) => {
           </Wrapper>
         </Flex>
         <Flex justify='center' margin='10px 0'>
-          <Paragraph size='sm'align='center'>{`&copy; Copyright - start2rent ${year}`}</Paragraph>
+          <Paragraph size='sm'align='center'>&copy;{` Copyright - start2rent ${year}`}</Paragraph>
         </Flex>
       </Container>
     </FooterWrapper>
