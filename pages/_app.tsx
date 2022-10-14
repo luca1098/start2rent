@@ -11,6 +11,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
     <Head>
       <link rel='shortcut icon' href='/img/logonoscritta.png' />
+      <meta name="author" content="Luca La Marca" />
+      <meta name="copyright" content="start2rent management" />
+      <meta name="dc.language" content="ita" />
+      <meta name="description" content="Esperti nella gestione degli affitti brevi" />
+      <title>Start2Rent | Esperti nella gestione degli affitti brevi</title>
     </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
